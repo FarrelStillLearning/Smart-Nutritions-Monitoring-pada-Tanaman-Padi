@@ -1,0 +1,23 @@
+{
+  "definitions": {
+    "ph": [
+      { "label": "masam", "operator": "<", "value": 6.5 },
+      { "label": "netral", "operator": "range", "min": 6.5, "max": 8.5 },
+      { "label": "basa", "operator": ">", "value": 8.5 }
+    ],
+    "tds": [
+      { "label": "kurang", "operator": "<", "value": 450 },
+      { "label": "ideal", "operator": "range", "min": 450, "max": 2000 },
+      { "label": "berlebih", "operator": ">", "value": 2000 }
+    ],
+    "kelembaban": [
+      { "label": "kering", "operator": "<", "value": 33 },
+      { "label": "lembab", "operator": "range", "min": 33, "max": 90 },
+      { "label": "basah", "operator": ">", "value": 90 }
+    ],
+    "curah_hujan": [
+      { "label": "cerah", "value": 0 },
+      { "label": "hujan", "value": 1 }
+    ]
+  }
+}

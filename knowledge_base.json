@@ -1,0 +1,704 @@
+[
+  {
+    "id": "R01",
+    "description": "Masam, Kering, TDS Kurang, Cerah",
+    "conditions": { "ph": "masam", "tds": "kurang", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Jangan beri pupuk, fokus irigasi dulu",
+      "air_r": "Lakukan Irigasi Genang (Penyiraman Penuh)",
+      "pestisida_s": "Tidak perlu pestisida, fokus air dulu",
+      "status_t": "Tidak Aman (STRESS KERING PRIORITAS 1)",
+      "action_steps": ["Lakukan irigasi penuh segera", "Diamkan lahan sampai lembab", "Baru beri pupuk setelah tanah pulih"],
+      "cf": 0.9
+    }
+  },
+  {
+    "id": "R02",
+    "description": "Masam, Kering, TDS Kurang, Hujan",
+    "conditions": { "ph": "masam", "tds": "kurang", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Menunggu Hujan Reda)",
+      "action_steps": ["Biarkan hujan mengisi lahan", "Monitor pH tanah setelah hujan"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R03",
+    "description": "Masam, Lembab, TDS Kurang, Cerah",
+    "conditions": { "ph": "masam", "tds": "kurang", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Berikan Pupuk Urea dan Phonska",
+      "air_r": "Pertahankan kondisi macak-macak",
+      "pestisida_s": "Semprot Pestisida (Opiplus/Umum)",
+      "status_t": "Waspada (Masam Kurang Hara)",
+      "action_steps": ["Berikan Dolomit/Kapur Pertanian cair", "Semprot pestisida untuk pencegahan jamur"],
+      "cf": 0.6
+    }
+  },
+  {
+    "id": "R04",
+    "description": "Masam, Lembab, TDS Kurang, Hujan",
+    "conditions": { "ph": "masam", "tds": "kurang", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Aman Sementara)",
+      "action_steps": ["Tunggu hujan reda"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R05",
+    "description": "Masam, Basah, TDS Kurang, Cerah",
+    "conditions": { "ph": "masam", "tds": "kurang", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tunda Pupuk",
+      "air_r": "Ganti Air (Jika berminyak/karat)",
+      "pestisida_s": "Gunakan Pestisida Umum",
+      "status_t": "Tidak Aman (Air Berkarat)",
+      "action_steps": ["Buang air lama jika terlihat berminyak", "Masukan air baru", "Beri pupuk setelah air bersih"],
+      "cf": 0.6
+    }
+  },
+  {
+    "id": "R06",
+    "description": "Masam, Basah, TDS Kurang, Hujan",
+    "conditions": { "ph": "masam", "tds": "kurang", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Buang Air)",
+      "action_steps": ["Buka pintu pembuangan", "Biarkan air hujan membilas air karat"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R07",
+    "description": "Masam, Kering, TDS Ideal, Cerah",
+    "conditions": { "ph": "masam", "tds": "ideal", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Nutrisi Cukup (Tidak perlu pupuk)",
+      "air_r": "Lakukan Irigasi Genang",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Tidak Aman (Butuh Air)",
+      "action_steps": ["Lakukan irigasi segera", "Diamkan lahan sampai kondisi pulih"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R08",
+    "description": "Masam, Kering, TDS Ideal, Hujan",
+    "conditions": { "ph": "masam", "tds": "ideal", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti)",
+      "action_steps": ["Biarkan alam bekerja (hujan mengisi air)"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R09",
+    "description": "Masam, Lembab, TDS Ideal, Cerah",
+    "conditions": { "ph": "masam", "tds": "ideal", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk",
+      "air_r": "Pertahankan kondisi air",
+      "pestisida_s": "Spray Fungisida/Pestisida Preventif",
+      "status_t": "Waspada (Rawan Jamur)",
+      "action_steps": ["Semprot fungisida tipis untuk pencegahan", "Berikan Kapur jika pH masih turun"],
+      "cf": 0.6
+    }
+  },
+  {
+    "id": "R10",
+    "description": "Masam, Lembab, TDS Ideal, Hujan",
+    "conditions": { "ph": "masam", "tds": "ideal", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Aman)",
+      "action_steps": ["Monitor pH air"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R11",
+    "description": "Masam, Basah, TDS Ideal, Cerah",
+    "conditions": { "ph": "masam", "tds": "ideal", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk",
+      "air_r": "Drainase (Kurangi Air)",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada (pH Rendah)",
+      "action_steps": ["Kurangi air agar akar bisa bernapas", "Cek apakah air berwarna merah/karat"],
+      "cf": 0.4
+    }
+  },
+  {
+    "id": "R12",
+    "description": "Masam, Basah, TDS Ideal, Hujan",
+    "conditions": { "ph": "masam", "tds": "ideal", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Banjir)",
+      "action_steps": ["Pastikan drainase/saluran pembuangan terbuka"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R13",
+    "description": "Masam, Kering, TDS Berlebih, Cerah",
+    "conditions": { "ph": "masam", "tds": "berlebih", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK (Bahaya)",
+      "air_r": "Lakukan Flushing (Bilas Lahan)",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "BAHAYA (Keracunan)",
+      "action_steps": ["Banjiri lahan untuk melarutkan racun pupuk", "Buang air bilasan", "Berikan Kapur"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R14",
+    "description": "Masam, Kering, TDS Berlebih, Hujan",
+    "conditions": { "ph": "masam", "tds": "berlebih", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Menguntungkan)",
+      "action_steps": ["Biarkan hujan membantu mencuci tanah yang keracunan"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R15",
+    "description": "Masam, Lembab, TDS Berlebih, Cerah",
+    "conditions": { "ph": "masam", "tds": "berlebih", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK",
+      "air_r": "Lakukan Sirkulasi Air",
+      "pestisida_s": "Semprot Pestisida (Matador/Lamida)",
+      "status_t": "Bahaya (Tergenang + Gosong)",
+      "action_steps": ["Masukan air lalu buang (cuci tanah)", "Stop pupuk apapun", "Semprot pestisida jika ada hama yang naik"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R16",
+    "description": "Masam, Lembab, TDS Berlebih, Hujan",
+    "conditions": { "ph": "masam", "tds": "berlebih", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Cuci Alami)",
+      "action_steps": ["Buka pembuangan agar racun hanyut bersama air hujan"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R17",
+    "description": "Masam, Basah, TDS Berlebih, Cerah",
+    "conditions": { "ph": "masam", "tds": "berlebih", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "JANGAN KASIH PUPUK",
+      "air_r": "Lakukan Drainase Penuh",
+      "pestisida_s": "Semprot Pestisida (Matador/Lamida)",
+      "status_t": "Tidak Aman (Tergenang + Gosong)",
+      "action_steps": ["Lakukan Drainase/Buang air segera", "Semprot pestisida secara merata"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R18",
+    "description": "Masam, Basah, TDS Berlebih, Hujan",
+    "conditions": { "ph": "masam", "tds": "berlebih", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Drainase)",
+      "action_steps": ["PASTIKAN air keluar lancar"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R19",
+    "description": "Netral, Kering, TDS Kurang, Cerah",
+    "conditions": { "ph": "netral", "tds": "kurang", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk, fokus irigasi dulu",
+      "air_r": "Lakukan Irigasi Genang",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Tidak Aman (Kering urgent, air dulu)",
+      "action_steps": ["Lakukan irigasi pertama", "Diamkan lahan", "Baru kasih pupuk setelah tanah basah"],
+      "cf": 0.9
+    }
+  },
+  {
+    "id": "R20",
+    "description": "Netral, Kering, TDS Kurang, Hujan",
+    "conditions": { "ph": "netral", "tds": "kurang", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Rezeki)",
+      "action_steps": ["Hujan mengisi air gratis", "Pupuk bisa diberikan setelah hujan reda"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R21",
+    "description": "Netral, Lembab, TDS Kurang, Cerah",
+    "conditions": { "ph": "netral", "tds": "kurang", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Berikan Pupuk Urea dan Phonska",
+      "air_r": "Pertahankan kondisi air",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada (Perlu pemupukan susulan)",
+      "action_steps": ["Berikan Urea (untuk masa pertumbuhan)", "Berikan Phonska + Opiplus (untuk pembuahan)"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R22",
+    "description": "Netral, Lembab, TDS Kurang, Hujan",
+    "conditions": { "ph": "netral", "tds": "kurang", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "Lakukan Pemupukan Susulan (Urea + Phonska)",
+      "air_r": "Kelembaban cukup",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada (Pasti - Pemupukan)",
+      "action_steps": ["Lakukan pemupukan susulan", "Pastikan tidak ada genangan air berlebih"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R23",
+    "description": "Netral, Basah, TDS Kurang, Cerah",
+    "conditions": { "ph": "netral", "tds": "kurang", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tunda Pemupukan (Tunggu Air Surut)",
+      "air_r": "Lakukan Drainase Sedikit",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Aman (Air Cukup)",
+      "action_steps": ["Kurangi air sampai macak-macak", "Baru pupuk (agar tidak boros/hanyut)"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R24",
+    "description": "Netral, Basah, TDS Kurang, Hujan",
+    "conditions": { "ph": "netral", "tds": "kurang", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Potensi Banjir)",
+      "action_steps": ["Jaga level air", "Siap-siap buka pembuangan"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R25",
+    "description": "Netral, Kering, TDS Ideal, Cerah",
+    "conditions": { "ph": "netral", "tds": "ideal", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk (Fokus irigasi)",
+      "air_r": "Lakukan Irigasi Genang",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Tidak Aman (Kering butuh irigasi)",
+      "action_steps": ["Lakukan irigasi sampai tanah basah", "Diamkan lahan"],
+      "cf": 0.9
+    }
+  },
+  {
+    "id": "R26",
+    "description": "Netral, Kering, TDS Ideal, Hujan",
+    "conditions": { "ph": "netral", "tds": "ideal", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Terbantu Hujan)",
+      "action_steps": ["Biarkan hujan membasahi tanah kering", "Monitor saja"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R27",
+    "description": "Netral, Lembab, TDS Ideal, Cerah",
+    "conditions": { "ph": "netral", "tds": "ideal", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk (Kondisi Ideal)",
+      "air_r": "Tidak perlu irigasi",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "SANGAT AMAN (Kondisi Perfect)",
+      "action_steps": ["Pertahankan kondisi ini", "Cek hama rutin"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R28",
+    "description": "Netral, Lembab, TDS Ideal, Hujan",
+    "conditions": { "ph": "netral", "tds": "ideal", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Aman)",
+      "action_steps": ["Pastikan saluran air lancar"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R29",
+    "description": "Netral, Basah, TDS Ideal, Cerah",
+    "conditions": { "ph": "netral", "tds": "ideal", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk",
+      "air_r": "Drainase (Jika perlu)",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Aman (Cenderung Basah)",
+      "action_steps": ["Jika air terlalu tinggi, buang sedikit", "Kondisi masih aman untuk padi"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R30",
+    "description": "Netral, Basah, TDS Ideal, Hujan",
+    "conditions": { "ph": "netral", "tds": "ideal", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Waspada Banjir)",
+      "action_steps": ["Buka pintu air keluar penuh", "Cegah tanaman tenggelam"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R31",
+    "description": "Netral, Kering, TDS Berlebih, Cerah",
+    "conditions": { "ph": "netral", "tds": "berlebih", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK (Residu Tinggi)",
+      "air_r": "Lakukan Flushing (Bilas Lahan)",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Bahaya (Residu Pupuk)",
+      "action_steps": ["Padi gosong karena sisa pupuk kering", "Banjiri lahan segera"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R32",
+    "description": "Netral, Kering, TDS Berlebih, Hujan",
+    "conditions": { "ph": "netral", "tds": "berlebih", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Pencucian Alami)",
+      "action_steps": ["Hujan akan melarutkan sisa pupuk di tanah kering"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R33",
+    "description": "Netral, Lembab, TDS Berlebih, Cerah",
+    "conditions": { "ph": "netral", "tds": "berlebih", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK (Overdosis)",
+      "air_r": "Lakukan Sirkulasi Air",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada (Overdosis)",
+      "action_steps": ["Stop pemberian Urea (Daun hijau gelap)", "Ganti air untuk mengurangi konsentrasi"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R34",
+    "description": "Netral, Lembab, TDS Berlebih, Hujan",
+    "conditions": { "ph": "netral", "tds": "berlebih", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Pencucian)",
+      "action_steps": ["Biarkan hujan mencuci lahan", "Buka drainase"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R35",
+    "description": "Netral, Basah, TDS Berlebih, Cerah",
+    "conditions": { "ph": "netral", "tds": "berlebih", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP/KURANGI PUPUK",
+      "air_r": "Lakukan Drainase Segera",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Tidak Aman (Keracunan)",
+      "action_steps": ["Buang air/drainase untuk turun ke macak-macak", "Stop pupuk total"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R36",
+    "description": "Netral, Basah, TDS Berlebih, Hujan",
+    "conditions": { "ph": "netral", "tds": "berlebih", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Drainase Total)",
+      "action_steps": ["Buka semua pintu pembuangan", "Pastikan air racun terbuang"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R37",
+    "description": "Basa, Kering, TDS Kurang, Cerah",
+    "conditions": { "ph": "basa", "tds": "kurang", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Berikan Pupuk ZA / Ammonium Sulfate",
+      "air_r": "Lakukan Irigasi Lahan",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Tidak Aman (Basa)",
+      "action_steps": ["Irigasi lahan", "Gunakan pupuk ZA (bersifat asam) untuk turunkan pH"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R38",
+    "description": "Basa, Kering, TDS Kurang, Hujan",
+    "conditions": { "ph": "basa", "tds": "kurang", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Menunggu Hujan Reda)",
+      "action_steps": ["Air hujan baik untuk tanah Basa (sedikit asam)"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R39",
+    "description": "Basa, Lembab, TDS Kurang, Cerah",
+    "conditions": { "ph": "basa", "tds": "kurang", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Berikan Pupuk ZA + Organik",
+      "air_r": "Pertahankan kondisi air",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada (pH Tinggi)",
+      "action_steps": ["Beri pupuk ZA", "Tambahkan bahan organik/kompos untuk menyeimbangkan pH"],
+      "cf": 0.6
+    }
+  },
+  {
+    "id": "R40",
+    "description": "Basa, Lembab, TDS Kurang, Hujan",
+    "conditions": { "ph": "basa", "tds": "kurang", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Aman)",
+      "action_steps": ["Monitor pH"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R41",
+    "description": "Basa, Basah, TDS Kurang, Cerah",
+    "conditions": { "ph": "basa", "tds": "kurang", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tunda Pupuk",
+      "air_r": "Lakukan Drainase",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada",
+      "action_steps": ["Kurangi air", "pH basa sering menghambat penyerapan mikro"],
+      "cf": 0.4
+    }
+  },
+  {
+    "id": "R42",
+    "description": "Basa, Basah, TDS Kurang, Hujan",
+    "conditions": { "ph": "basa", "tds": "kurang", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Banjir)",
+      "action_steps": ["Buka drainase"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R43",
+    "description": "Basa, Kering, TDS Ideal, Cerah",
+    "conditions": { "ph": "basa", "tds": "ideal", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk",
+      "air_r": "Lakukan Irigasi Lahan",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Kurang Air",
+      "action_steps": ["Irigasi lahan segera", "Beri sulfur jika pH sangat tinggi"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R44",
+    "description": "Basa, Kering, TDS Ideal, Hujan",
+    "conditions": { "ph": "basa", "tds": "ideal", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti)",
+      "action_steps": ["Biarkan hujan mengisi air"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R45",
+    "description": "Basa, Lembab, TDS Ideal, Cerah",
+    "conditions": { "ph": "basa", "tds": "ideal", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk",
+      "air_r": "Tidak perlu irigasi",
+      "pestisida_s": "Semprot Pupuk Daun Mikro",
+      "status_t": "Waspada (Klorosis)",
+      "action_steps": ["Semprot pupuk daun mikro (Fe/Zn) jika ada gejala daun kuning"],
+      "cf": 0.6
+    }
+  },
+  {
+    "id": "R46",
+    "description": "Basa, Lembab, TDS Ideal, Hujan",
+    "conditions": { "ph": "basa", "tds": "ideal", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Aman)",
+      "action_steps": ["Monitor saja"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R47",
+    "description": "Basa, Basah, TDS Ideal, Cerah",
+    "conditions": { "ph": "basa", "tds": "ideal", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "Tidak perlu pupuk",
+      "air_r": "Lakukan Drainase",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Aman",
+      "action_steps": ["Jaga sirkulasi air"],
+      "cf": 0.4
+    }
+  },
+  {
+    "id": "R48",
+    "description": "Basa, Basah, TDS Ideal, Hujan",
+    "conditions": { "ph": "basa", "tds": "ideal", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Waspada Banjir)",
+      "action_steps": ["Pastikan drainase lancar"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R49",
+    "description": "Basa, Kering, TDS Berlebih, Cerah",
+    "conditions": { "ph": "basa", "tds": "berlebih", "kelembaban": "kering", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK",
+      "air_r": "Lakukan Flushing (Bilas Lahan)",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Bahaya (Salinitas?)",
+      "action_steps": ["Cuci tanah dengan air tawar sebanyak mungkin"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R50",
+    "description": "Basa, Kering, TDS Berlebih, Hujan",
+    "conditions": { "ph": "basa", "tds": "berlebih", "kelembaban": "kering", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Cuci Garam)",
+      "action_steps": ["Hujan sangat membantu mencuci garam/pupuk"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R51",
+    "description": "Basa, Lembab, TDS Berlebih, Cerah",
+    "conditions": { "ph": "basa", "tds": "berlebih", "kelembaban": "lembab", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK",
+      "air_r": "Lakukan Sirkulasi Air",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Waspada",
+      "action_steps": ["Sirkulasi air terus menerus", "Berikan Sulfur/Belerang"],
+      "cf": 0.6
+    }
+  },
+  {
+    "id": "R52",
+    "description": "Basa, Lembab, TDS Berlebih, Hujan",
+    "conditions": { "ph": "basa", "tds": "berlebih", "kelembaban": "lembab", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Menunggu Hujan Reda)",
+      "action_steps": ["Buka drainase"],
+      "cf": 1.0
+    }
+  },
+  {
+    "id": "R53",
+    "description": "Basa, Basah, TDS Berlebih, Cerah",
+    "conditions": { "ph": "basa", "tds": "berlebih", "kelembaban": "basah", "curah_hujan": "cerah" },
+    "results": {
+      "pupuk_q": "STOP PUPUK",
+      "air_r": "Lakukan Drainase Total",
+      "pestisida_s": "Tidak perlu pestisida",
+      "status_t": "Bahaya",
+      "action_steps": ["Kuras air sawah", "Ganti air tawar baru", "Stop pupuk"],
+      "cf": 0.8
+    }
+  },
+  {
+    "id": "R54",
+    "description": "Basa, Basah, TDS Berlebih, Hujan",
+    "conditions": { "ph": "basa", "tds": "berlebih", "kelembaban": "basah", "curah_hujan": "hujan" },
+    "results": {
+      "pupuk_q": "TUNDA (Sedang Hujan)",
+      "air_r": "TUNDA (Sedang Hujan)",
+      "pestisida_s": "TUNDA (Sedang Hujan)",
+      "status_t": "Standby (Pasti - Bahaya Banjir)",
+      "action_steps": ["DRAINASE TOTAL", "Pastikan air keluar membawa racun"],
+      "cf": 1.0
+    }
+  }
+]
