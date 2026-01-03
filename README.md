@@ -295,7 +295,7 @@ Aplikasi akan terbuka di browser: `http://localhost:****`
 
 ## Video Demo
 
-**Link Video Demonstrasi:** [YouTube Link - To Be Added]
+**Link Video Demonstrasi:** https://youtu.be/hjmWv9Ygwkk?si=WFsFEWCQdAYXYjyF
 
 ## License
 
